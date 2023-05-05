@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.2.4"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                fontFamily: {
+                    sans: ["Roboto", "sans-serif"],
+                    body: ["Roboto", "sans-serif"],
+                    mono: ["ui-monospace", "monospace"],
+                },
+            },
+            corePlugins: {
+                preflight: false,
+            },
+        };
+    </script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="container flex justify-around py-8 mx-auto bg-blue-100">
+        <div class="flex items-center">
+            <h3 class="text-2xl font-medium text-blue-500">LOGO</h3>
+        </div>
+        <!-- left header section -->
+        <div class="items-center hidden space-x-8 lg:flex">
+            <a href="">Home</a>
+            <a href="">About Us</a>
+            <a href="">Blogs</a>
+            <a href="">Our Team</a>
+            <a href="">Contact Us</a>
+        </div>
+        <!-- right header section -->
+        <div class="relative flex items-center">
+            <!-- Cart Icon -->
+            <a class="mr-4 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="#">
+                <span class="[&>svg]:w-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+                        <path
+                            d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Container with two dropdown menus -->
+            <div class="relative" data-te-dropdown-ref>
+                <!-- First dropdown trigger -->
+                <a class="hidden-arrow mr-4 flex items-center text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                    href="#" id="dropdownMenuButton1" role="button" data-te-dropdown-toggle-ref aria-expanded="false">
+                    <!-- Dropdown trigger icon -->
+                    <span class="[&>svg]:w-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                    <!-- Notification counter -->
+                    <span class="absolute -mt-2.5 ml-2 rounded-full bg-red-700 px-1.5 py-0 text-xs text-white">1</span>
+                </a>
+                <!-- First dropdown menu -->
+                <ul class="absolute left-auto right-0 z-[1000] float-left m-0 mt-1 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                    aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
+                    <!-- First dropdown menu items -->
+                    <li>
+                        <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                            href="#" data-te-dropdown-item-ref>Action</a>
+                    </li>
+                    <li>
+                        <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                            href="#" data-te-dropdown-item-ref>Another action</a>
+                    </li>
+                    <li>
+                        <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                            href="#" data-te-dropdown-item-ref>Something else here</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Second dropdown container -->
+            <div class="relative" data-te-dropdown-ref>
+                <!-- Second dropdown trigger -->
+                <a class="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
+                    href="#" id="dropdownMenuButton2" role="button" data-te-dropdown-toggle-ref aria-expanded="false">
+                    <!-- User avatar -->
+                    <img src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg" class="rounded-full"
+                        style="height: 25px; width: 25px" alt="" loading="lazy" />
+                </a>
+                <!-- Second dropdown menu -->
+                <ul class="absolute left-auto right-0 z-[1000] float-left m-0 mt-1 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                    aria-labelledby="dropdownMenuButton2" data-te-dropdown-menu-ref>
+                    <!-- Second dropdown menu items -->
+                    <li>
+                        <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                            href="#" data-te-dropdown-item-ref>Action</a>
+                    </li>
+                    <li>
+                        <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                            href="#" data-te-dropdown-item-ref>Another action</a>
+                    </li>
+                    <li>
+                        <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                            href="#" data-te-dropdown-item-ref>Something else here</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img class="object-cover w-full h-96" src="https://source.unsplash.com/user/erondu/3000x900"
+                    alt="image" />
+            </div>
+            <div class="swiper-slide">
+                <img class="object-cover w-full h-96" src="https://source.unsplash.com/collection/190727/3000x900"
+                    alt="image" />
+            </div>
+            <div class="swiper-slide">
+                <img class="object-cover w-full h-96" src="https://source.unsplash.com/collection/190728/3000x900"
+                    alt="image" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+
+
+    <div class="flex bg-blue-100">
+        <div class="flex flex-row p-6 m-6 w-full mx-auto justify-around">
+
+            <div class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700 p-6 m-6">
+                <a href="#!">
+                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
+                </a>
+                <div class="p-6">
+                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                        Card title
+                    </h5>
+                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                        Some quick example text to build on the card title and make up the
+                        bulk of the card's content.
+                    </p>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" type="button">
+                        Button
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700 p-6 m-6">
+                <a href="#!">
+                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
+                </a>
+                <div class="p-6">
+                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                        Card title
+                    </h5>
+                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                        Some quick example text to build on the card title and make up the
+                        bulk of the card's content.
+                    </p>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" type="button">
+                        Button
+                    </button>
+                </div>
+            </div>
+
+            <div class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700 p-6 m-6">
+                <a href="#!">
+                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
+                </a>
+                <div class="p-6">
+                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                        Card title
+                    </h5>
+                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                        Some quick example text to build on the card title and make up the
+                        bulk of the card's content.
+                    </p>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" type="button">
+                        Button
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="flex flex-col m-auto p-10 bg-blue-100">
+        <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+            <div class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
+                <table class="min-w-full">
+                    <thead>
+                        <tr>
+                            <th
+                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                Name</th>
+                            <th
+                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                Email</th>
+                            <th
+                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                Status</th>
+                            <th
+                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                Edit</th>
+                            <th
+                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                Delete</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody class="bg-white">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-10 h-10">
+                                        <img class="w-10 h-10 rounded-full" src="https://source.unsplash.com/user/erondu"
+                                            alt="admin dashboard ui">
+                                    </div>
+    
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium leading-5 text-gray-900">
+                                            John Doe
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+    
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <div class="text-sm leading-5 text-gray-500">john@example.com</div>
+                            </td>
+    
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <span
+                                    class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">Active</span>
+                            </td>
+    
+                            <td
+                                class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                </svg>
+                            </td>
+                            <td
+                                class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-10 h-10">
+                                        <img class="w-10 h-10 rounded-full" src="https://source.unsplash.com/user/erondu"
+                                            alt="admin dashboard ui">
+                                    </div>
+    
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium leading-5 text-gray-900">
+                                            John Doe
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+    
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <div class="text-sm leading-5 text-gray-500">john@example.com</div>
+                            </td>
+    
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <span
+                                    class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">Active</span>
+                            </td>
+    
+                            <td
+                                class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                </svg>
+                            </td>
+                            <td
+                                class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-10 h-10">
+                                        <img class="w-10 h-10 rounded-full" src="https://source.unsplash.com/user/erondu"
+                                            alt="admin dashboard ui">
+                                    </div>
+    
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium leading-5 text-gray-900">
+                                            John Doe
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+    
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <div class="text-sm leading-5 text-gray-500">john@example.com</div>
+                            </td>
+    
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <span
+                                    class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">Active</span>
+                            </td>
+    
+                            <td
+                                class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                </svg>
+                            </td>
+                            <td
+                                class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-24 mx-52 my-5 border-solid border-2 border-fuchsia-950 rounded-lg overflow-y-auto h-80">
+        <ul>
+            <li class="mx-5 my-5 py-2 border-solid border-2 border-fuchsia-950 rounded-lg">
+                <div class="flex justify-around ">
+                    <div>
+                        <a href="#!">
+                            <img class=" w-64" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="mx-5 my-5">
+                        <a href="">Heading Goes Here</a>
+                        <div>
+                            <div>250.00</div>
+                            <span>Ratings</span>
+                            <div>Selling Type</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="mx-5 my-5 py-2 border-solid border-2 border-fuchsia-950 rounded-lg">
+                <div class="flex justify-around ">
+                    <div>
+                        <a href="#!">
+                            <img class=" w-64" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="mx-5 my-5">
+                        <a href="">Heading Goes Here</a>
+                        <div>
+                            <div>250.00</div>
+                            <span>Ratings</span>
+                            <div>Selling Type</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="mx-5 my-5 py-2 border-solid border-2 border-fuchsia-950 rounded-lg">
+                <div class="flex justify-around ">
+                    <div>
+                        <a href="#!">
+                            <img class=" w-64" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="mx-5 my-5">
+                        <a href="">Heading Goes Here</a>
+                        <div>
+                            <div>250.00</div>
+                            <span>Ratings</span>
+                            <div>Selling Type</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="mx-5 my-5 py-2  border-solid border-2 border-fuchsia-950 rounded-lg">
+                <div class="flex justify-around">
+                    <div>
+                        <a href="#!">
+                            <img class=" w-64" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="mx-5 my-5">
+                        <a href="">Heading Goes Here</a>
+                        <div>
+                            <div>250.00</div>
+                            <span>Ratings</span>
+                            <div>Selling Type</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="mx-5 my-5 py-2  marker:border-solid border-2 border-fuchsia-950 rounded-lg">
+                <div class="flex justify-around">
+                    <div>
+                        <a href="#!">
+                            <img class=" w-64" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="mx-5 my-5">
+                        <a href="">Heading Goes Here</a>
+                        <div>
+                            <div>250.00</div>
+                            <span>Ratings</span>
+                            <div>Selling Type</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <footer class=" border-t border-gray-200 bg-blue-100">
+        <div class="container flex flex-col flex-wrap px-4 py-16 mx-auto md:items-center lg:items-start md:flex-row md:flex-nowrap">
+            <div class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
+                <a class="flexitems-center justify-center text-4xl font-bold text-blue-700 md:justify-start">
+                    Logo
+                </a>
+                <p class="mt-2 text-sm text-gray-500">
+                    Footer dummay data Lorem.....
+                </p>
+            </div>
+            <div class="justify-between w-full mt-4 text-center lg:flex">
+                <div class="w-full px-4 lg:w-1/3 md:w-1/2">
+                    <h2 class="mb-2 font-bold tracking-widest text-gray-900">
+                        Useful Links
+                    </h2>
+                    <ul class="mb-8 space-y-2 text-sm list-none">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">About Us</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Blogs</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full px-4 lg:w-1/3 md:w-1/2">
+                    <h2 class="mb-2 font-bold tracking-widest text-gray-900">
+                        Useful Links
+                    </h2>
+                    <ul class="mb-8 space-y-2 text-sm list-none">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">About Us</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Blogs</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full px-4 lg:w-1/3 md:w-1/2">
+                    <h2 class="mb-2 font-bold tracking-widest text-gray-900">
+                        Useful Links
+                    </h2>
+                    <ul class="mb-8 space-y-2 text-sm list-none">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">About Us</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Blogs</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center p-10 bg-black">
+            <p class="text-base text-gray-400">
+                All rights reserved to Thileeban S
+            </p>
+        </div>
+    </footer>
+
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.mySwiper', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</body>
+
+</html>
